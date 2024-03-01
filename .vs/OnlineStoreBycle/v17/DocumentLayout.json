@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Kamal\\Desktop\\OnlineStoreBycle\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6430CA9F-FE5A-438F-B992-FF48E5C44356}|OnlineStoreBycle\\OnlineStoreBycle.csproj|c:\\users\\kamal\\desktop\\onlinestorebycle\\onlinestorebycle\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6430CA9F-FE5A-438F-B992-FF48E5C44356}|OnlineStoreBycle\\OnlineStoreBycle.csproj|solutionrelative:onlinestorebycle\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Kamal\\Desktop\\OnlineStoreBycle\\OnlineStoreBycle\\Program.cs",
+              "RelativeDocumentMoniker": "OnlineStoreBycle\\Program.cs",
+              "ToolTip": "C:\\Users\\Kamal\\Desktop\\OnlineStoreBycle\\OnlineStoreBycle\\Program.cs",
+              "RelativeToolTip": "OnlineStoreBycle\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-01T15:54:56.425Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
