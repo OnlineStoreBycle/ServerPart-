@@ -12,10 +12,16 @@ internal sealed class OnlineStoreBycleDbContext : DbContext
     }
 
     public DbSet<BycleTypeEntity> BycleTypeEntities { get; set; }
+    public DbSet<BrandBycleEntity> BrandBycleEntities { get; set; }
+    public DbSet<FrameSizeEntity> FrameSizeEntities { get; set; }
+    public DbSet<BycleEntity> BycleEntities { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.ApplyConfiguration(new BycleTypeConfiguration());
+        modelBuilder.ApplyConfiguration(new BrandBycleConfiguration());
+        modelBuilder.ApplyConfiguration(new FrameSizeConfiguration());
+        modelBuilder.ApplyConfiguration(new BycleEntityConfiguration());
 
         base.OnModelCreating(modelBuilder);
     }

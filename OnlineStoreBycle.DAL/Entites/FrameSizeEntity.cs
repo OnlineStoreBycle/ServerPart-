@@ -1,8 +1,8 @@
 ﻿namespace OnlineStoreBycle.DAL.Entites;
 
-internal sealed class BycleTypeEntity
+internal sealed class FrameSizeEntity
 {
     public int Id { get; set; }
-    public string TypeName { get; set; } = string.Empty;
+    public int Size { get; set; }
     public IEnumerable<BycleEntity> Bycles { get; set; } = Enumerable.Empty<BycleEntity>();
 }
