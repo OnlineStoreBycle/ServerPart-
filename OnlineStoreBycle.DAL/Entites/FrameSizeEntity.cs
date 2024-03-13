@@ -1,15 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace OnlineStoreBycle.DAL.Entites;
 
-namespace OnlineStoreBycle.DAL.Entites
+internal sealed class FrameSizeEntity
 {
-    internal sealed class FrameSizeEntity
-    {
-        public int Id {  get; set; }
-        public int Size { get; set; }
-        public IEnumerable<BycleEntity>? Bycles { get; set; }
-    }
+    public int Id { get; set; }
+    public int Size { get; set; }
+    public IEnumerable<BycleEntity> Bycles { get; set; } = Enumerable.Empty<BycleEntity>();
 }

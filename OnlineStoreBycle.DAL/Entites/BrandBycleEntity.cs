@@ -1,15 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace OnlineStoreBycle.DAL.Entites;
 
-namespace OnlineStoreBycle.DAL.Entites
+internal sealed class BrandBycleEntity
 {
-    internal sealed class BrandBycleEntity
-    {
-        public int Id {  get; set; }
-        public string BrandName { get; set; }
-        public IEnumerable<BycleEntity>? Bycles { get; set; }
-    }
+    public int Id { get; set; }
+    public string Name { get; set; } = string.Empty;
+    public IEnumerable<BycleEntity> Bycles { get; set; } = Enumerable.Empty<BycleEntity>();
 }
