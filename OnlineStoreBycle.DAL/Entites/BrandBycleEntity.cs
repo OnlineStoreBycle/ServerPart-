@@ -1,6 +1,6 @@
 ﻿namespace OnlineStoreBycle.DAL.Entites;
 
-internal sealed class BrandBycleEntity
+public sealed class BrandBycleEntity
 {
     public int Id { get; set; }
     public string Name { get; set; } = string.Empty;

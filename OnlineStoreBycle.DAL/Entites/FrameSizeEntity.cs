@@ -1,6 +1,6 @@
 ﻿namespace OnlineStoreBycle.DAL.Entites;
 
-internal sealed class FrameSizeEntity
+public sealed class FrameSizeEntity
 {
     public int Id { get; set; }
     public int Size { get; set; }
