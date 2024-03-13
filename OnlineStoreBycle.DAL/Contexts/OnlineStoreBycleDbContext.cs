@@ -4,11 +4,11 @@ using OnlineStoreBycle.DAL.Entites;
 
 namespace OnlineStoreBycle.DAL.Context;
 
-internal sealed class OnlineStoreBycleDbContext : DbContext
+public sealed class OnlineStoreBycleDbContext : DbContext
 {
     public OnlineStoreBycleDbContext(DbContextOptions<OnlineStoreBycleDbContext> options) : base(options)
     {
-        
+
     }
 
     public DbSet<BycleTypeEntity> BycleTypeEntities { get; set; }
@@ -18,11 +18,11 @@ internal sealed class OnlineStoreBycleDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        base.OnModelCreating(modelBuilder);
+
         modelBuilder.ApplyConfiguration(new BycleTypeConfiguration());
         modelBuilder.ApplyConfiguration(new BrandBycleConfiguration());
         modelBuilder.ApplyConfiguration(new FrameSizeConfiguration());
         modelBuilder.ApplyConfiguration(new BycleEntityConfiguration());
-
-        base.OnModelCreating(modelBuilder);
     }
 }
