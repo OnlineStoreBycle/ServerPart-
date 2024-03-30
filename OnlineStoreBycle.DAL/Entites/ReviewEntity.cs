@@ -1,6 +1,6 @@
 ﻿namespace OnlineStoreBycle.DAL.Entites;
 
-public sealed class ReviewsEntity
+public sealed class ReviewEntity
 {
     public int Id { get; set; }
     public string Text { get; set; } = string.Empty;

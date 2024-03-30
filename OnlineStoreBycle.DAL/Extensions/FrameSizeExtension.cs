@@ -3,15 +3,15 @@ using OnlineStoreBycle.DAL.Entites;
 
 namespace OnlineStoreBycle.DAL.Extensions;
 
-internal static class BycleTypeExtension
+internal static class FrameSizeExtension
 {
-    public static BycleType ToModel(this BycleTypeEntity entity)
+    public static FrameSize ToModel(this FrameSizeEntity entity)
         => new(
             entity.Id,
-            entity.TypeName,
+            entity.Size,
             entity.Bycles.ToModels()
         );
 
-    public static IEnumerable<BycleType> ToModels(this IEnumerable<BycleTypeEntity> entities)
+    public static IEnumerable<FrameSize> ToModels(this IEnumerable<FrameSizeEntity> entities)
         => entities.Select(x => x.ToModel());
 }
