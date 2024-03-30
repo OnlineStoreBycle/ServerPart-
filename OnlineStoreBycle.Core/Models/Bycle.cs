@@ -14,5 +14,8 @@ public sealed record Bycle(
     bool IsDepreciation,
     string? ImageLink,
     string? Title,
-    BycleType BycleType
+    BycleType BycleType,
+    BrandBycle BrandBycle,
+    FrameSize FrameSize,
+    IEnumerable<Review> Reviews
 );

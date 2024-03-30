@@ -20,6 +20,12 @@ internal static class BycleExtension
             entity.IsDepreciation,
             entity.ImageLink,
             entity.Title,
-            entity.BycleType.ToModel()
+            entity.BycleType.ToModel(),
+            entity.BrandBycle.ToModel(),
+            entity.FrameSize.ToModel(),
+            entity.Reviews.ToModels()
         );
+
+    public static IEnumerable<Bycle> ToModels(this IEnumerable<BycleEntity> entities)
+        => entities.Select(x => x.ToModel());
 }

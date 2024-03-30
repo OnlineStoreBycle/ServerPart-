@@ -3,15 +3,15 @@ using OnlineStoreBycle.DAL.Entites;
 
 namespace OnlineStoreBycle.DAL.Extensions;
 
-internal static class BycleTypeExtension
+internal static class BrandBycleExtension
 {
-    public static BycleType ToModel(this BycleTypeEntity entity)
+    public static BrandBycle ToModel(this BrandBycleEntity entity)
         => new(
             entity.Id,
-            entity.TypeName,
+            entity.Name,
             entity.Bycles.ToModels()
         );
 
-    public static IEnumerable<BycleType> ToModels(this IEnumerable<BycleTypeEntity> entities)
+    public static IEnumerable<BrandBycle> ToModels(this IEnumerable<BrandBycleEntity> entities)
         => entities.Select(x => x.ToModel());
 }
