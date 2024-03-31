@@ -7,7 +7,6 @@ public sealed record Bycle(
     int BrandId,
     int TypeId,
     int FrameSizeId,
-    int PriceId,
     bool IsBooked,
     string? FrameMaterialName,
     decimal Weight,
@@ -19,7 +18,7 @@ public sealed record Bycle(
     BrandBycle BrandBycle,
     BycleType BycleType,
     FrameSize FrameSize,
-    Price Price,
     IEnumerable<Review> Reviews,
+    IEnumerable<Price> Prices,
     IEnumerable<NumberBycle> NumberBycles
 ) : IModel;

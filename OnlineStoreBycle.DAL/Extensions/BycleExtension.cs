@@ -11,7 +11,6 @@ internal static class BycleExtension
             entity.BrandId,
             entity.TypeId,
             entity.FrameSizeId,
-            entity.PriceId,
             entity.IsBooked,
             entity.FrameMaterialName,
             entity.Weight,
@@ -23,8 +22,8 @@ internal static class BycleExtension
             entity.BrandBycle.ToModel(),
             entity.BycleType.ToModel(),
             entity.FrameSize.ToModel(),
-            entity.Price.ToModel(),
             entity.Reviews.ToModels(),
+            entity.Prices.ToModels(),
             entity.NumberBycles.ToModels()
         );
 
@@ -37,7 +36,6 @@ internal static class BycleExtension
             BrandId = model.BrandId,
             TypeId = model.TypeId,
             FrameSizeId = model.FrameSizeId,
-            PriceId = model.PriceId,
             IsBooked = model.IsBooked,
             FrameMaterialName = model.FrameMaterialName,
             Weight = model.Weight,
