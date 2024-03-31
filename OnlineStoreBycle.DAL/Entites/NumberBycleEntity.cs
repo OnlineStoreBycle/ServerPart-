@@ -1,9 +1,10 @@
 ﻿namespace OnlineStoreBycle.DAL.Entites;
 
-public sealed class ReviewEntity
+public sealed class NumberBycleEntity
 {
     public int Id { get; set; }
     public int BycleId { get; set; }
-    public string Text { get; set; } = string.Empty;
+    public string Value { get; set; } = string.Empty;
     public BycleEntity Bycle { get; set; } = new();
+    public IEnumerable<OrderBycleEntity> OrderBycles { get; set; } = [];
 }

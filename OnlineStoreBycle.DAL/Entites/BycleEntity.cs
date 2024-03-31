@@ -6,7 +6,7 @@ public sealed class BycleEntity
     public int BrandId { get; set; }
     public int TypeId { get; set; }
     public int FrameSizeId { get; set; }
-    public decimal Price { get; set; }
+    public int PriceId { get; set; }
     public bool IsBooked { get; set; }
     public string? FrameMaterialName { get; set; }
     public decimal Weight { get; set; }
@@ -15,8 +15,10 @@ public sealed class BycleEntity
     public bool IsDepreciation { get; set; }
     public string? ImageLink { get; set; }
     public string? Title { get; set; }
-    public BycleTypeEntity BycleType { get; set; } = new();
     public BrandBycleEntity BrandBycle { get; set; } = new();
+    public BycleTypeEntity BycleType { get; set; } = new();
     public FrameSizeEntity FrameSize { get; set; } = new();
+    public PriceEntity Price { get; set; } = new();
     public IEnumerable<ReviewEntity> Reviews { get; set; } = [];
+    public IEnumerable<NumberBycleEntity> NumberBycles { get; set; } = [];
 }
