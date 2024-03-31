@@ -15,4 +15,14 @@ internal static class ReviewExtension
 
     public static IEnumerable<Review> ToModels(this IEnumerable<ReviewEntity> entities)
         => entities.Select(x => x.ToModel());
+
+    public static ReviewEntity FromModel(this Review model)
+        => new()
+        {
+            BycleId = model.BycleId,
+            Text = model.Text
+        };
+
+    public static IEnumerable<ReviewEntity> FromModel(this IEnumerable<Review> models)
+        => models.Select(x => x.FromModel());
 }
