@@ -1,8 +1,8 @@
 ﻿namespace OnlineStoreBycle.DAL.Entites;
 
-public sealed class BycleTypeEntity
+public sealed class StatusEntity
 {
     public int Id { get; set; }
     public string Name { get; set; } = string.Empty;
-    public IEnumerable<BycleEntity> Bycles { get; set; } = [];
+    public IEnumerable<OrderEntity> Orders { get; set; } = [];
 }

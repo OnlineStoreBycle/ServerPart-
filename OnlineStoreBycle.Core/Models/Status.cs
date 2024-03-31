@@ -2,8 +2,8 @@
 
 namespace OnlineStoreBycle.Core.Models;
 
-public sealed record BycleType(
+public sealed record Status(
     int Id,
     string Name,
-    IEnumerable<Bycle> Bycles
+    IEnumerable<Order> Orders
 ) : IModel;
