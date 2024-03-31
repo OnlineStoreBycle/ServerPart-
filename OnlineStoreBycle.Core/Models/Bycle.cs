@@ -1,4 +1,6 @@
-﻿namespace OnlineStoreBycle.Core.Models;
+﻿using OnlineStoreBycle.Core.Interfaces.Markers;
+
+namespace OnlineStoreBycle.Core.Models;
 
 public sealed record Bycle(
     int Id,
@@ -18,4 +20,4 @@ public sealed record Bycle(
     BrandBycle BrandBycle,
     FrameSize FrameSize,
     IEnumerable<Review> Reviews
-);
+) : IModel;
