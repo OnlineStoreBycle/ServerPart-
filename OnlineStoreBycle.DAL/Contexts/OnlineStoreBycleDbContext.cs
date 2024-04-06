@@ -8,17 +8,17 @@ public sealed class OnlineStoreBycleDbContext : DbContext
 {
     public OnlineStoreBycleDbContext(DbContextOptions<OnlineStoreBycleDbContext> options) : base(options) { }
 
-    public DbSet<BrandBycleEntity> BrandBycleEntities { get; set; }
-    public DbSet<BycleEntity> BycleEntities { get; set; }
-    public DbSet<BycleTypeEntity> BycleTypeEntities { get; set; }
-    public DbSet<ClientEntity> ClientEntities { get; set; }
-    public DbSet<FrameSizeEntity> FrameSizeEntities { get; set; }
-    public DbSet<NumberBycleEntity> NumberBycleEntities { get; set; }
-    public DbSet<OrderBycleEntity> OrderBycleEntities { get; set; }
-    public DbSet<OrderEntity> OrderEntities { get; set; }
-    public DbSet<PriceEntity> PriceEntities { get; set; }
-    public DbSet<ReviewEntity> ReviewEntities { get; set; }
-    public DbSet<StatusEntity> StatusEntities { get; set; }
+    public DbSet<BrandBycleEntity> BrandBycles { get; set; }
+    public DbSet<BycleEntity> Bycles { get; set; }
+    public DbSet<BycleTypeEntity> BycleTypes { get; set; }
+    public DbSet<ClientEntity> Clients { get; set; }
+    public DbSet<FrameSizeEntity> FrameSizes { get; set; }
+    public DbSet<NumberBycleEntity> NumberBycles { get; set; }
+    public DbSet<OrderBycleEntity> OrderBycles { get; set; }
+    public DbSet<OrderEntity> Orders { get; set; }
+    public DbSet<PriceEntity> Prices { get; set; }
+    public DbSet<ReviewEntity> Reviews { get; set; }
+    public DbSet<StatusEntity> Statuses{ get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
