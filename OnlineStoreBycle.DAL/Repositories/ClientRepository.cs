@@ -6,50 +6,54 @@ using OnlineStoreBycle.DAL.Extensions;
 
 namespace OnlineStoreBycle.DAL.Repositories;
 
-public class FrameSizeRepository : IRepositories<FrameSize>
+public sealed class ClientRepository : IRepositories<Client>
 {
     private readonly OnlineStoreBycleDbContext _context;
 
-    public FrameSizeRepository(OnlineStoreBycleDbContext context)
+    public ClientRepository(OnlineStoreBycleDbContext context)
     {
         _context = context;
     }
 
-    public async Task AddAsync(FrameSize model)
+    public async Task AddAsync(Client model)
     {
         await _context.AddAsync(model.FromModel());
         await _context.SaveChangesAsync();
     }
 
-    public async Task DeleteAsync(FrameSize model)
+    public async Task DeleteAsync(Client model)
     {
-        await _context.FrameSizes
+        await _context.Clients
             .Where(w => w.Id == model.Id)
             .ExecuteDeleteAsync();
     }
 
-    public async Task<FrameSize?> GetModelAsync(int id)
+    public async Task<Client?> GetModelAsync(int id)
     {
-        return (await _context.FrameSizes
+        return (await _context.Clients
             .AsNoTracking()
             .FirstOrDefaultAsync(x => x.Id == id))?
             .ToModel();
     }
 
-    public async Task<IEnumerable<FrameSize>> GetModelsAsync()
+    public async Task<IEnumerable<Client>> GetModelsAsync()
     {
-        return (await _context.FrameSizes
+        return (await _context.Clients
             .AsNoTracking()
             .ToListAsync())
             .ToModels();
     }
 
-    public async Task UpdateAsync(FrameSize model)
+    public async Task UpdateAsync(Client model)
     {
-        await _context.FrameSizes
+        await _context.Clients
             .Where(w => w.Id == model.Id)
             .ExecuteUpdateAsync(e => e
-                .SetProperty(p => p.Size, model.Size)
+                .SetProperty(p => p.Name, model.Name)
+                .SetProperty(p => p.Password, model.Password)
+                .SetProperty(p => p.Email, model.Email)
+                .SetProperty(p => p.Phone, model.Phone)
+                .SetProperty(p => p.Address, model.Address)
             );
     }
 }

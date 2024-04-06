@@ -6,50 +6,50 @@ using OnlineStoreBycle.DAL.Extensions;
 
 namespace OnlineStoreBycle.DAL.Repositories;
 
-public class FrameSizeRepository : IRepositories<FrameSize>
+public sealed class BrandBycleRepository : IRepositories<BrandBycle>
 {
     private readonly OnlineStoreBycleDbContext _context;
 
-    public FrameSizeRepository(OnlineStoreBycleDbContext context)
+    public BrandBycleRepository(OnlineStoreBycleDbContext context)
     {
         _context = context;
     }
 
-    public async Task AddAsync(FrameSize model)
+    public async Task AddAsync(BrandBycle model)
     {
         await _context.AddAsync(model.FromModel());
         await _context.SaveChangesAsync();
     }
 
-    public async Task DeleteAsync(FrameSize model)
+    public async Task DeleteAsync(BrandBycle model)
     {
-        await _context.FrameSizes
-            .Where(w => w.Id == model.Id)
+        await _context.BrandBycles
+            .Where(x => x.Id == model.Id)
             .ExecuteDeleteAsync();
     }
 
-    public async Task<FrameSize?> GetModelAsync(int id)
+    public async Task<BrandBycle?> GetModelAsync(int id)
     {
-        return (await _context.FrameSizes
+        return (await _context.BrandBycles
             .AsNoTracking()
             .FirstOrDefaultAsync(x => x.Id == id))?
             .ToModel();
     }
 
-    public async Task<IEnumerable<FrameSize>> GetModelsAsync()
+    public async Task<IEnumerable<BrandBycle>> GetModelsAsync()
     {
-        return (await _context.FrameSizes
+        return (await _context.BrandBycles
             .AsNoTracking()
             .ToListAsync())
             .ToModels();
     }
 
-    public async Task UpdateAsync(FrameSize model)
+    public async Task UpdateAsync(BrandBycle model)
     {
-        await _context.FrameSizes
+        await _context.BrandBycles
             .Where(w => w.Id == model.Id)
             .ExecuteUpdateAsync(e => e
-                .SetProperty(p => p.Size, model.Size)
+                .SetProperty(p => p.Name, model.Name)
             );
     }
 }

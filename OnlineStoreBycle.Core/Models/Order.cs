@@ -7,7 +7,7 @@ public sealed record Order(
     int ClientId,
     int StatusId,
     string Number,
-    string Type,
+    string TypeName,
     string PaymentMethod,
     string AddressReturn,
     DateTime DateBegin,
