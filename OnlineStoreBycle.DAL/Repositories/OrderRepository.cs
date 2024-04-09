@@ -32,6 +32,8 @@ public sealed class OrderRepository : IRepositories<Order>
     {
         return (await _context.Orders
             .AsNoTracking()
+            .Include(x => x.Client)
+            .Include(x => x.Status)
             .FirstOrDefaultAsync(x => x.Id == id))?
             .ToModel();
     }
@@ -40,6 +42,8 @@ public sealed class OrderRepository : IRepositories<Order>
     {
         return (await _context.Orders
             .AsNoTracking()
+            .Include(x => x.Client)
+            .Include(x => x.Status)
             .ToListAsync())
             .ToModels();
     }

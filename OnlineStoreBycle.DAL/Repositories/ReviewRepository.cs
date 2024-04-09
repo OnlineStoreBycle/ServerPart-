@@ -32,6 +32,7 @@ public sealed class ReviewRepository : IRepositories<Review>
     {
         return (await _context.Reviews
             .AsNoTracking()
+            .Include(x => x.Bycle)
             .FirstOrDefaultAsync(x => x.Id == id))?
             .ToModel();
     }
@@ -40,6 +41,7 @@ public sealed class ReviewRepository : IRepositories<Review>
     {
         return (await _context.Reviews
             .AsNoTracking()
+            .Include(x => x.Bycle)
             .ToListAsync())
             .ToModels();
     }

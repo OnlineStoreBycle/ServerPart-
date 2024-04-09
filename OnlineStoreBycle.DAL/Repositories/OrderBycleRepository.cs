@@ -32,6 +32,8 @@ public sealed class OrderBycleRepository : IRepositories<OrderBycle>
     {
         return (await _context.OrderBycles
             .AsNoTracking()
+            .Include(x => x.Order)
+            .Include(x => x.NumberBycle)
             .FirstOrDefaultAsync(x => x.Id == id))?
             .ToModel();
     }
@@ -40,6 +42,8 @@ public sealed class OrderBycleRepository : IRepositories<OrderBycle>
     {
         return (await _context.OrderBycles
             .AsNoTracking()
+            .Include(x => x.Order)
+            .Include(x => x.NumberBycle)
             .ToListAsync())
             .ToModels();
     }

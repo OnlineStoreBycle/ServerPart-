@@ -13,5 +13,5 @@ public sealed class OrderEntity
     public DateTime DateEnd { get; set; }
     public ClientEntity Client { get; set; } = new();
     public StatusEntity Status { get; set; } = new();
-    public IEnumerable<OrderBycleEntity> OrderBycles { get; set; } = [];
+    public ICollection<OrderBycleEntity> OrderBycles { get; set; } = [];
 }
