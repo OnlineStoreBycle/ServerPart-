@@ -6,7 +6,7 @@ using OnlineStoreBycle.DAL.Extensions;
 
 namespace OnlineStoreBycle.DAL.Repositories;
 
-public sealed class StatusRepository : IRepositories<Status>
+public sealed class StatusRepository : IRepository<Status>
 {
     private readonly OnlineStoreBycleDbContext _context;
 

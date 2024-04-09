@@ -4,36 +4,36 @@ using OnlineStoreBycle.Core.Models;
 
 namespace OnlineStoreBycle.Application.Services;
 
-public sealed class BycleTypeService : IService<BycleType>
+public sealed class PriceService : IService<Price>
 {
-    private readonly IRepository<BycleType> _repository;
+    private readonly IRepository<Price> _repository;
 
-    public BycleTypeService(IRepository<BycleType> repository)
+    public PriceService(IRepository<Price> repository)
     {
         _repository = repository;
     }
 
-    public async Task AddAsync(BycleType model)
+    public async Task AddAsync(Price model)
     {
         await _repository.AddAsync(model);
     }
 
-    public async Task DeleteAsync(BycleType model)
+    public async Task DeleteAsync(Price model)
     {
         await _repository.DeleteAsync(model);
     }
 
-    public async Task<BycleType?> GetModelAsync(int id)
+    public async Task<Price?> GetModelAsync(int id)
     {
         return await _repository.GetModelAsync(id);
     }
 
-    public async Task<IEnumerable<BycleType>> GetModelsAsync()
+    public async Task<IEnumerable<Price>> GetModelsAsync()
     {
         return await _repository.GetModelsAsync();
     }
 
-    public async Task UpdateAsync(BycleType model)
+    public async Task UpdateAsync(Price model)
     {
         await _repository.UpdateAsync(model);
     }

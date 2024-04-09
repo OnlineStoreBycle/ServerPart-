@@ -1,8 +1,8 @@
 ﻿using OnlineStoreBycle.Core.Interfaces.Markers;
 
-namespace OnlineStoreBycle.Core.Interfaces.Repositories;
+namespace OnlineStoreBycle.Core.Interfaces.Services;
 
-public interface IRepositories<T> where T : IModel
+public interface IService<T> where T : IModel
 {
     Task AddAsync(T model);
     Task DeleteAsync(T model);

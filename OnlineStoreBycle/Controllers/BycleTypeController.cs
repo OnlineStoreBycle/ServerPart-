@@ -8,9 +8,9 @@ namespace OnlineStoreBycle.Controllers;
 [Route("api/[controller]/[action]")]
 public class BycleTypeController : Controller
 {
-    private readonly IBycleTypeService _service;
+    private readonly IService<BycleType> _service;
 
-    public BycleTypeController(IBycleTypeService service)
+    public BycleTypeController(IService<BycleType> service)
     {
         _service = service;
     }
@@ -18,6 +18,6 @@ public class BycleTypeController : Controller
     [HttpGet]
     public async Task<IEnumerable<BycleType>> Get()
     {
-        return await _service.Get();
+        return await _service.GetModelsAsync();
     }
 }

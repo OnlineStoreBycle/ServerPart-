@@ -6,7 +6,7 @@ using OnlineStoreBycle.DAL.Extensions;
 
 namespace OnlineStoreBycle.DAL.Repositories;
 
-public class FrameSizeRepository : IRepositories<FrameSize>
+public class FrameSizeRepository : IRepository<FrameSize>
 {
     private readonly OnlineStoreBycleDbContext _context;
 

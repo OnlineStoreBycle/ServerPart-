@@ -4,36 +4,36 @@ using OnlineStoreBycle.Core.Models;
 
 namespace OnlineStoreBycle.Application.Services;
 
-public sealed class BycleTypeService : IService<BycleType>
+public sealed class StatusService : IService<Status>
 {
-    private readonly IRepository<BycleType> _repository;
+    private readonly IRepository<Status> _repository;
 
-    public BycleTypeService(IRepository<BycleType> repository)
+    public StatusService(IRepository<Status> repository)
     {
         _repository = repository;
     }
 
-    public async Task AddAsync(BycleType model)
+    public async Task AddAsync(Status model)
     {
         await _repository.AddAsync(model);
     }
 
-    public async Task DeleteAsync(BycleType model)
+    public async Task DeleteAsync(Status model)
     {
         await _repository.DeleteAsync(model);
     }
 
-    public async Task<BycleType?> GetModelAsync(int id)
+    public async Task<Status?> GetModelAsync(int id)
     {
         return await _repository.GetModelAsync(id);
     }
 
-    public async Task<IEnumerable<BycleType>> GetModelsAsync()
+    public async Task<IEnumerable<Status>> GetModelsAsync()
     {
         return await _repository.GetModelsAsync();
     }
 
-    public async Task UpdateAsync(BycleType model)
+    public async Task UpdateAsync(Status model)
     {
         await _repository.UpdateAsync(model);
     }
