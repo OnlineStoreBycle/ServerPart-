@@ -6,7 +6,7 @@ using OnlineStoreBycle.DAL.Extensions;
 
 namespace OnlineStoreBycle.DAL.Repositories;
 
-public sealed class BrandBycleRepository : IRepositories<BrandBycle>
+public sealed class BrandBycleRepository : IRepository<BrandBycle>
 {
     private readonly OnlineStoreBycleDbContext _context;
 

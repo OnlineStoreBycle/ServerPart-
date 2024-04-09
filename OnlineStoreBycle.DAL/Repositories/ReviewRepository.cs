@@ -6,7 +6,7 @@ using OnlineStoreBycle.DAL.Extensions;
 
 namespace OnlineStoreBycle.DAL.Repositories;
 
-public sealed class ReviewRepository : IRepositories<Review>
+public sealed class ReviewRepository : IRepository<Review>
 {
     private readonly OnlineStoreBycleDbContext _context;
 

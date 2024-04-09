@@ -4,36 +4,36 @@ using OnlineStoreBycle.Core.Models;
 
 namespace OnlineStoreBycle.Application.Services;
 
-public sealed class BycleTypeService : IService<BycleType>
+public sealed class FrameSizeService : IService<FrameSize>
 {
-    private readonly IRepository<BycleType> _repository;
+    private readonly IRepository<FrameSize> _repository;
 
-    public BycleTypeService(IRepository<BycleType> repository)
+    public FrameSizeService(IRepository<FrameSize> repository)
     {
         _repository = repository;
     }
 
-    public async Task AddAsync(BycleType model)
+    public async Task AddAsync(FrameSize model)
     {
         await _repository.AddAsync(model);
     }
 
-    public async Task DeleteAsync(BycleType model)
+    public async Task DeleteAsync(FrameSize model)
     {
         await _repository.DeleteAsync(model);
     }
 
-    public async Task<BycleType?> GetModelAsync(int id)
+    public async Task<FrameSize?> GetModelAsync(int id)
     {
         return await _repository.GetModelAsync(id);
     }
 
-    public async Task<IEnumerable<BycleType>> GetModelsAsync()
+    public async Task<IEnumerable<FrameSize>> GetModelsAsync()
     {
         return await _repository.GetModelsAsync();
     }
 
-    public async Task UpdateAsync(BycleType model)
+    public async Task UpdateAsync(FrameSize model)
     {
         await _repository.UpdateAsync(model);
     }
