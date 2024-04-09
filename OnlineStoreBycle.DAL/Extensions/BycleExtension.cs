@@ -21,10 +21,7 @@ internal static class BycleExtension
             entity.Title,
             entity.BrandBycle.ToModel(),
             entity.BycleType.ToModel(),
-            entity.FrameSize.ToModel(),
-            entity.Reviews.ToModels(),
-            entity.Prices.ToModels(),
-            entity.NumberBycles.ToModels()
+            entity.FrameSize.ToModel()
         );
 
     public static IEnumerable<Bycle> ToModels(this IEnumerable<BycleEntity> entities)

@@ -17,8 +17,5 @@ public sealed record Bycle(
     string? Title,
     BrandBycle BrandBycle,
     BycleType BycleType,
-    FrameSize FrameSize,
-    IEnumerable<Review> Reviews,
-    IEnumerable<Price> Prices,
-    IEnumerable<NumberBycle> NumberBycles
+    FrameSize FrameSize
 ) : IModel;

@@ -8,8 +8,7 @@ internal static class StatusExtension
     public static Status ToModel(this StatusEntity entity)
         => new(
             entity.Id,
-            entity.Name,
-            entity.Orders.ToModels()
+            entity.Name
         );
 
     public static IEnumerable<Status> ToModels(this IEnumerable<StatusEntity> entities)

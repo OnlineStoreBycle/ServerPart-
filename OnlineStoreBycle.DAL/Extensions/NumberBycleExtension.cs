@@ -10,8 +10,7 @@ internal static class NumberBycleExtension
             entity.Id,
             entity.BycleId,
             entity.Value,
-            entity.Bycle.ToModel(),
-            entity.OrderBycles.ToModels()
+            entity.Bycle.ToModel()
         );
 
     public static IEnumerable<NumberBycle> ToModels(this IEnumerable<NumberBycleEntity> entities)

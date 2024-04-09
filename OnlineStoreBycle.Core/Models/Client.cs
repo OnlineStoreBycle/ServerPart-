@@ -8,6 +8,5 @@ public sealed record Client(
     string Password,
     string Email,
     string Phone,
-    string Address,
-    IEnumerable<Order> Orders
+    string Address
 ) : IModel;

@@ -6,6 +6,5 @@ public sealed record NumberBycle(
     int Id,
     int BycleId,
     string Value,
-    Bycle Bycle,
-    IEnumerable<OrderBycle> OrderBycles
+    Bycle Bycle
 ) : IModel;

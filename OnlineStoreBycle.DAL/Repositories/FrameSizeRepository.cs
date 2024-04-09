@@ -49,7 +49,7 @@ public class FrameSizeRepository : IRepositories<FrameSize>
         await _context.FrameSizes
             .Where(w => w.Id == model.Id)
             .ExecuteUpdateAsync(e => e
-                .SetProperty(p => p.Size, model.Size)
+                .SetProperty(p => p.Value, model.Value)
             );
     }
 }

@@ -13,6 +13,5 @@ public sealed record Order(
     DateTime DateBegin,
     DateTime DateEnd,
     Client Client,
-    Status Status,
-    IEnumerable<OrderBycle> OrderBycles
+    Status Status
 ) : IModel;

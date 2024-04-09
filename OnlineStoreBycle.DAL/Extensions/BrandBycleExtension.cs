@@ -8,8 +8,7 @@ internal static class BrandBycleExtension
     public static BrandBycle ToModel(this BrandBycleEntity entity)
         => new(
             entity.Id,
-            entity.Name,
-            entity.Bycles.ToModels()
+            entity.Name
         );
 
     public static IEnumerable<BrandBycle> ToModels(this IEnumerable<BrandBycleEntity> entities)

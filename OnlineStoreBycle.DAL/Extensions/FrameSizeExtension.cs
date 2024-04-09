@@ -8,8 +8,7 @@ internal static class FrameSizeExtension
     public static FrameSize ToModel(this FrameSizeEntity entity)
         => new(
             entity.Id,
-            entity.Size,
-            entity.Bycles.ToModels()
+            entity.Value
         );
 
     public static IEnumerable<FrameSize> ToModels(this IEnumerable<FrameSizeEntity> entities)
@@ -18,7 +17,7 @@ internal static class FrameSizeExtension
     public static FrameSizeEntity FromModel(this FrameSize model)
         => new()
         {
-            Size = model.Size
+            Value = model.Value
         };
 
     public static IEnumerable<FrameSizeEntity> FromModels(this IEnumerable<FrameSize> models)
