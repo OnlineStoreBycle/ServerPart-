@@ -17,7 +17,7 @@ public sealed class BycleEntity
     public BrandBycleEntity BrandBycle { get; set; } = new();
     public BycleTypeEntity BycleType { get; set; } = new();
     public FrameSizeEntity FrameSize { get; set; } = new();
-    public IEnumerable<ReviewEntity> Reviews { get; set; } = [];
-    public IEnumerable<PriceEntity> Prices {  get; set; } = [];
-    public IEnumerable<NumberBycleEntity> NumberBycles { get; set; } = [];
+    public ICollection<ReviewEntity> Reviews { get; set; } = [];
+    public ICollection<PriceEntity> Prices {  get; set; } = [];
+    public ICollection<NumberBycleEntity> NumberBycles { get; set; } = [];
 }

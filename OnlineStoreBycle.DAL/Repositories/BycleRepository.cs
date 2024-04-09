@@ -32,6 +32,9 @@ public sealed class BycleRepository : IRepositories<Bycle>
     {
         return (await _context.Bycles
             .AsNoTracking()
+            .Include(x => x.BrandBycle)
+            .Include(x => x.BycleType)
+            .Include(x => x.FrameSize)
             .FirstOrDefaultAsync(x => x.Id == id))?
             .ToModel();
     }
@@ -40,6 +43,9 @@ public sealed class BycleRepository : IRepositories<Bycle>
     {
         return (await _context.Bycles
             .AsNoTracking()
+            .Include(x => x.BrandBycle)
+            .Include(x => x.BycleType)
+            .Include(x => x.FrameSize)
             .ToListAsync())
             .ToModels();
     }

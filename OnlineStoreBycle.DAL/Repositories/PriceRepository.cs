@@ -32,6 +32,7 @@ public sealed class PriceRepository : IRepositories<Price>
     {
         return (await _context.Prices
             .AsNoTracking()
+            .Include(x => x.Bycle)
             .FirstOrDefaultAsync(x => x.Id == id))?
             .ToModel();
     }
@@ -40,6 +41,7 @@ public sealed class PriceRepository : IRepositories<Price>
     {
         return (await _context.Prices
             .AsNoTracking()
+            .Include(x => x.Bycle)
             .ToListAsync())
             .ToModels();
     }

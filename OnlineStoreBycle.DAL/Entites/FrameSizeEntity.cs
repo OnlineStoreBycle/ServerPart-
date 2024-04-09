@@ -4,5 +4,5 @@ public sealed class FrameSizeEntity
 {
     public int Id { get; set; }
     public int Value { get; set; }
-    public IEnumerable<BycleEntity> Bycles { get; set; } = [];
+    public ICollection<BycleEntity> Bycles { get; set; } = [];
 }

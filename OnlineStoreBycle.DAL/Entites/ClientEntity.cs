@@ -8,5 +8,5 @@ public sealed class ClientEntity
     public string Email { get; set; } = string.Empty;
     public string Phone { get; set; } = string.Empty;
     public string Address { get; set; } = string.Empty;
-    public IEnumerable<OrderEntity> Orders { get; set; } = [];
+    public ICollection<OrderEntity> Orders { get; set; } = [];
 }

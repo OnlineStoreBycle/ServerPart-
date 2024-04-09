@@ -6,5 +6,5 @@ public sealed class NumberBycleEntity
     public int BycleId { get; set; }
     public string Value { get; set; } = string.Empty;
     public BycleEntity Bycle { get; set; } = new();
-    public IEnumerable<OrderBycleEntity> OrderBycles { get; set; } = [];
+    public ICollection<OrderBycleEntity> OrderBycles { get; set; } = [];
 }
