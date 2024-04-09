@@ -23,14 +23,14 @@ public sealed class FrameSizeService : IService<FrameSize>
         await _repository.DeleteAsync(model);
     }
 
-    public async Task<FrameSize?> GetModelAsync(int id)
+    public async Task<IEnumerable<FrameSize>> GetAsync()
     {
-        return await _repository.GetModelAsync(id);
+        return await _repository.GetAsync();
     }
 
-    public async Task<IEnumerable<FrameSize>> GetModelsAsync()
+    public async Task<FrameSize?> GetAsync(int id)
     {
-        return await _repository.GetModelsAsync();
+        return await _repository.GetAsync(id);
     }
 
     public async Task UpdateAsync(FrameSize model)

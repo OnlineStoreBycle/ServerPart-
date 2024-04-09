@@ -18,6 +18,6 @@ public class BycleTypeController : Controller
     [HttpGet]
     public async Task<IEnumerable<BycleType>> Get()
     {
-        return await _service.GetModelsAsync();
+        return await _service.GetAsync();
     }
 }

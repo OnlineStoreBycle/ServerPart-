@@ -28,20 +28,20 @@ public sealed class StatusRepository : IRepository<Status>
             .ExecuteDeleteAsync();
     }
 
-    public async Task<Status?> GetModelAsync(int id)
-    {
-        return (await _context.Statuses
-            .AsNoTracking()
-            .FirstOrDefaultAsync(x => x.Id == id))?
-            .ToModel();
-    }
-
-    public async Task<IEnumerable<Status>> GetModelsAsync()
+    public async Task<IEnumerable<Status>> GetAsync()
     {
         return (await _context.Statuses
             .AsNoTracking()
             .ToListAsync())
             .ToModels();
+    }
+
+    public async Task<Status?> GetAsync(int id)
+    {
+        return (await _context.Statuses
+            .AsNoTracking()
+            .FirstOrDefaultAsync(x => x.Id == id))?
+            .ToModel();
     }
 
     public async Task UpdateAsync(Status model)

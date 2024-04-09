@@ -23,14 +23,14 @@ public sealed class StatusService : IService<Status>
         await _repository.DeleteAsync(model);
     }
 
-    public async Task<Status?> GetModelAsync(int id)
+    public async Task<IEnumerable<Status>> GetAsync()
     {
-        return await _repository.GetModelAsync(id);
+        return await _repository.GetAsync();
     }
 
-    public async Task<IEnumerable<Status>> GetModelsAsync()
+    public async Task<Status?> GetAsync(int id)
     {
-        return await _repository.GetModelsAsync();
+        return await _repository.GetAsync(id);
     }
 
     public async Task UpdateAsync(Status model)

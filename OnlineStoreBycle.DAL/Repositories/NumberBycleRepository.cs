@@ -28,22 +28,22 @@ public sealed class NumberBycleRepository : IRepository<NumberBycle>
             .ExecuteDeleteAsync();
     }
 
-    public async Task<NumberBycle?> GetModelAsync(int id)
-    {
-        return (await _context.NumberBycles
-            .AsNoTracking()
-            .Include(x => x.Bycle)
-            .FirstOrDefaultAsync(x => x.Id == id))?
-            .ToModel();
-    }
-
-    public async Task<IEnumerable<NumberBycle>> GetModelsAsync()
+    public async Task<IEnumerable<NumberBycle>> GetAsync()
     {
         return (await _context.NumberBycles
             .AsNoTracking()
             .Include(x => x.Bycle)
             .ToListAsync())
             .ToModels();
+    }
+
+    public async Task<NumberBycle?> GetAsync(int id)
+    {
+        return (await _context.NumberBycles
+            .AsNoTracking()
+            .Include(x => x.Bycle)
+            .FirstOrDefaultAsync(x => x.Id == id))?
+            .ToModel();
     }
 
     public async Task UpdateAsync(NumberBycle model)

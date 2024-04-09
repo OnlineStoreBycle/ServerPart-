@@ -23,14 +23,14 @@ public sealed class ReviewService : IService<Review>
         await _repository.DeleteAsync(model);
     }
 
-    public async Task<Review?> GetModelAsync(int id)
+    public async Task<IEnumerable<Review>> GetAsync()
     {
-        return await _repository.GetModelAsync(id);
+        return await _repository.GetAsync();
     }
 
-    public async Task<IEnumerable<Review>> GetModelsAsync()
+    public async Task<Review?> GetAsync(int id)
     {
-        return await _repository.GetModelsAsync();
+        return await _repository.GetAsync(id);
     }
 
     public async Task UpdateAsync(Review model)

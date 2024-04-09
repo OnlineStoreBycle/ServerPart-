@@ -28,20 +28,20 @@ public class FrameSizeRepository : IRepository<FrameSize>
             .ExecuteDeleteAsync();
     }
 
-    public async Task<FrameSize?> GetModelAsync(int id)
-    {
-        return (await _context.FrameSizes
-            .AsNoTracking()
-            .FirstOrDefaultAsync(x => x.Id == id))?
-            .ToModel();
-    }
-
-    public async Task<IEnumerable<FrameSize>> GetModelsAsync()
+    public async Task<IEnumerable<FrameSize>> GetAsync()
     {
         return (await _context.FrameSizes
             .AsNoTracking()
             .ToListAsync())
             .ToModels();
+    }
+
+    public async Task<FrameSize?> GetAsync(int id)
+    {
+        return (await _context.FrameSizes
+            .AsNoTracking()
+            .FirstOrDefaultAsync(x => x.Id == id))?
+            .ToModel();
     }
 
     public async Task UpdateAsync(FrameSize model)

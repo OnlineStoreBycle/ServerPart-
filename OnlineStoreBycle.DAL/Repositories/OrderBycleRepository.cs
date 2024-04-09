@@ -28,17 +28,7 @@ public sealed class OrderBycleRepository : IRepository<OrderBycle>
             .ExecuteDeleteAsync();
     }
 
-    public async Task<OrderBycle?> GetModelAsync(int id)
-    {
-        return (await _context.OrderBycles
-            .AsNoTracking()
-            .Include(x => x.Order)
-            .Include(x => x.NumberBycle)
-            .FirstOrDefaultAsync(x => x.Id == id))?
-            .ToModel();
-    }
-
-    public async Task<IEnumerable<OrderBycle>> GetModelsAsync()
+    public async Task<IEnumerable<OrderBycle>> GetAsync()
     {
         return (await _context.OrderBycles
             .AsNoTracking()
@@ -46,6 +36,16 @@ public sealed class OrderBycleRepository : IRepository<OrderBycle>
             .Include(x => x.NumberBycle)
             .ToListAsync())
             .ToModels();
+    }
+
+    public async Task<OrderBycle?> GetAsync(int id)
+    {
+        return (await _context.OrderBycles
+            .AsNoTracking()
+            .Include(x => x.Order)
+            .Include(x => x.NumberBycle)
+            .FirstOrDefaultAsync(x => x.Id == id))?
+            .ToModel();
     }
 
     public async Task UpdateAsync(OrderBycle model)

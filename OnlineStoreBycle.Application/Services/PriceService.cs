@@ -23,14 +23,14 @@ public sealed class PriceService : IService<Price>
         await _repository.DeleteAsync(model);
     }
 
-    public async Task<Price?> GetModelAsync(int id)
+    public async Task<IEnumerable<Price>> GetAsync()
     {
-        return await _repository.GetModelAsync(id);
+        return await _repository.GetAsync();
     }
 
-    public async Task<IEnumerable<Price>> GetModelsAsync()
+    public async Task<Price?> GetAsync(int id)
     {
-        return await _repository.GetModelsAsync();
+        return await _repository.GetAsync(id);
     }
 
     public async Task UpdateAsync(Price model)

@@ -28,22 +28,22 @@ public sealed class PriceRepository : IRepository<Price>
             .ExecuteDeleteAsync();
     }
 
-    public async Task<Price?> GetModelAsync(int id)
-    {
-        return (await _context.Prices
-            .AsNoTracking()
-            .Include(x => x.Bycle)
-            .FirstOrDefaultAsync(x => x.Id == id))?
-            .ToModel();
-    }
-
-    public async Task<IEnumerable<Price>> GetModelsAsync()
+    public async Task<IEnumerable<Price>> GetAsync()
     {
         return (await _context.Prices
             .AsNoTracking()
             .Include(x => x.Bycle)
             .ToListAsync())
             .ToModels();
+    }
+
+    public async Task<Price?> GetAsync(int id)
+    {
+        return (await _context.Prices
+            .AsNoTracking()
+            .Include(x => x.Bycle)
+            .FirstOrDefaultAsync(x => x.Id == id))?
+            .ToModel();
     }
 
     public async Task UpdateAsync(Price model)
