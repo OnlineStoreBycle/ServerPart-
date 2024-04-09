@@ -26,24 +26,24 @@ public sealed class ReviewRepository : IRepository<Review>
         await _context.Reviews
             .Where(w => w.Id == model.Id)
             .ExecuteDeleteAsync();
-    }
+    } 
 
-    public async Task<Review?> GetModelAsync(int id)
-    {
-        return (await _context.Reviews
-            .AsNoTracking()
-            .Include(x => x.Bycle)
-            .FirstOrDefaultAsync(x => x.Id == id))?
-            .ToModel();
-    }
-
-    public async Task<IEnumerable<Review>> GetModelsAsync()
+    public async Task<IEnumerable<Review>> GetAsync()
     {
         return (await _context.Reviews
             .AsNoTracking()
             .Include(x => x.Bycle)
             .ToListAsync())
             .ToModels();
+    }
+
+    public async Task<Review?> GetAsync(int id)
+    {
+        return (await _context.Reviews
+            .AsNoTracking()
+            .Include(x => x.Bycle)
+            .FirstOrDefaultAsync(x => x.Id == id))?
+            .ToModel();
     }
 
     public async Task UpdateAsync(Review model)

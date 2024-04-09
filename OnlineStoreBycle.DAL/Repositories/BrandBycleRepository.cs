@@ -28,20 +28,20 @@ public sealed class BrandBycleRepository : IRepository<BrandBycle>
             .ExecuteDeleteAsync();
     }
 
-    public async Task<BrandBycle?> GetModelAsync(int id)
-    {
-        return (await _context.BrandBycles
-            .AsNoTracking()
-            .FirstOrDefaultAsync(x => x.Id == id))?
-            .ToModel();
-    }
-
-    public async Task<IEnumerable<BrandBycle>> GetModelsAsync()
+    public async Task<IEnumerable<BrandBycle>> GetAsync()
     {
         return (await _context.BrandBycles
             .AsNoTracking()
             .ToListAsync())
             .ToModels();
+    }
+
+    public async Task<BrandBycle?> GetAsync(int id)
+    {
+        return (await _context.BrandBycles
+            .AsNoTracking()
+            .FirstOrDefaultAsync(x => x.Id == id))?
+            .ToModel();
     }
 
     public async Task UpdateAsync(BrandBycle model)

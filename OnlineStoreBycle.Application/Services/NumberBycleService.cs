@@ -23,14 +23,14 @@ public sealed class NumberBycleService : IService<NumberBycle>
         await _repository.DeleteAsync(model);
     }
 
-    public async Task<NumberBycle?> GetModelAsync(int id)
+    public async Task<IEnumerable<NumberBycle>> GetAsync()
     {
-        return await _repository.GetModelAsync(id);
+        return await _repository.GetAsync();
     }
 
-    public async Task<IEnumerable<NumberBycle>> GetModelsAsync()
+    public async Task<NumberBycle?> GetAsync(int id)
     {
-        return await _repository.GetModelsAsync();
+        return await _repository.GetAsync(id);
     }
 
     public async Task UpdateAsync(NumberBycle model)

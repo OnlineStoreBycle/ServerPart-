@@ -23,14 +23,14 @@ public sealed class ClientService : IService<Client>
         await _repository.DeleteAsync(model);
     }
 
-    public async Task<Client?> GetModelAsync(int id)
+    public async Task<IEnumerable<Client>> GetAsync()
     {
-        return await _repository.GetModelAsync(id);
+        return await _repository.GetAsync();
     }
 
-    public async Task<IEnumerable<Client>> GetModelsAsync()
+    public async Task<Client?> GetAsync(int id)
     {
-        return await _repository.GetModelsAsync();
+        return await _repository.GetAsync(id);
     }
 
     public async Task UpdateAsync(Client model)

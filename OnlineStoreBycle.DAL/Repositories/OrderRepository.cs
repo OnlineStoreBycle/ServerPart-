@@ -28,17 +28,7 @@ public sealed class OrderRepository : IRepository<Order>
             .ExecuteDeleteAsync();
     }
 
-    public async Task<Order?> GetModelAsync(int id)
-    {
-        return (await _context.Orders
-            .AsNoTracking()
-            .Include(x => x.Client)
-            .Include(x => x.Status)
-            .FirstOrDefaultAsync(x => x.Id == id))?
-            .ToModel();
-    }
-
-    public async Task<IEnumerable<Order>> GetModelsAsync()
+    public async Task<IEnumerable<Order>> GetAsync()
     {
         return (await _context.Orders
             .AsNoTracking()
@@ -46,6 +36,16 @@ public sealed class OrderRepository : IRepository<Order>
             .Include(x => x.Status)
             .ToListAsync())
             .ToModels();
+    }
+
+    public async Task<Order?> GetAsync(int id)
+    {
+        return (await _context.Orders
+            .AsNoTracking()
+            .Include(x => x.Client)
+            .Include(x => x.Status)
+            .FirstOrDefaultAsync(x => x.Id == id))?
+            .ToModel();
     }
 
     public async Task UpdateAsync(Order model)
