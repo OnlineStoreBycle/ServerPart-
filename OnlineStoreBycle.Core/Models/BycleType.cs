@@ -4,6 +4,5 @@ namespace OnlineStoreBycle.Core.Models;
 
 public sealed record BycleType(
     int Id,
-    string Name,
-    IEnumerable<Bycle> Bycles
+    string Name
 ) : IModel;

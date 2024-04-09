@@ -12,8 +12,7 @@ internal static class ClientExtension
             entity.Password,
             entity.Email,
             entity.Phone,
-            entity.Address,
-            entity.Orders.ToModels()
+            entity.Address
         );
 
     public static IEnumerable<Client> ToModels(this IEnumerable<ClientEntity> entities)

@@ -17,8 +17,7 @@ internal static class OrderExtension
             entity.DateBegin,
             entity.DateEnd,
             entity.Client.ToModel(),
-            entity.Status.ToModel(),
-            entity.OrderBycles.ToModels()
+            entity.Status.ToModel()
         );
 
     public static IEnumerable<Order> ToModels(this IEnumerable<OrderEntity> entities)

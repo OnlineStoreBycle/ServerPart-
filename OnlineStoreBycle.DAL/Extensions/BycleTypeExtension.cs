@@ -8,8 +8,7 @@ internal static class BycleTypeExtension
     public static BycleType ToModel(this BycleTypeEntity entity)
         => new(
             entity.Id,
-            entity.Name,
-            entity.Bycles.ToModels()
+            entity.Name
         );
 
     public static IEnumerable<BycleType> ToModels(this IEnumerable<BycleTypeEntity> entities)
