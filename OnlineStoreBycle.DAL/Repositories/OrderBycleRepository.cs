@@ -21,10 +21,10 @@ public sealed class OrderBycleRepository : IRepository<OrderBycle>
         await _context.SaveChangesAsync();
     }
 
-    public async Task DeleteAsync(OrderBycle model)
+    public async Task DeleteAsync(int id)
     {
         await _context.OrderBycles
-            .Where(w => w.Id == model.Id)
+            .Where(w => w.Id == id)
             .ExecuteDeleteAsync();
     }
 

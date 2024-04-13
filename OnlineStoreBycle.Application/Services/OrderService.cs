@@ -18,9 +18,9 @@ public sealed class OrderService : IService<Order>
         await _repository.AddAsync(model);
     }
 
-    public async Task DeleteAsync(Order model)
+    public async Task DeleteAsync(int id)
     {
-        await _repository.DeleteAsync(model);
+        await _repository.DeleteAsync(id);
     }
 
     public async Task<IEnumerable<Order>> GetAsync()

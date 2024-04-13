@@ -21,10 +21,10 @@ public class FrameSizeRepository : IRepository<FrameSize>
         await _context.SaveChangesAsync();
     }
 
-    public async Task DeleteAsync(FrameSize model)
+    public async Task DeleteAsync(int id)
     {
         await _context.FrameSizes
-            .Where(w => w.Id == model.Id)
+            .Where(w => w.Id == id)
             .ExecuteDeleteAsync();
     }
 

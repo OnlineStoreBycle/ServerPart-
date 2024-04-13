@@ -21,10 +21,10 @@ public sealed class StatusRepository : IRepository<Status>
         await _context.SaveChangesAsync();
     }
 
-    public async Task DeleteAsync(Status model)
+    public async Task DeleteAsync(int id)
     {
         await _context.Statuses
-            .Where(w => w.Id == model.Id)
+            .Where(w => w.Id == id)
             .ExecuteDeleteAsync();
     }
 

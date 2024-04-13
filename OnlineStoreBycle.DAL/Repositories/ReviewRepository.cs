@@ -21,10 +21,10 @@ public sealed class ReviewRepository : IRepository<Review>
         await _context.SaveChangesAsync();
     }
 
-    public async Task DeleteAsync(Review model)
+    public async Task DeleteAsync(int id)
     {
         await _context.Reviews
-            .Where(w => w.Id == model.Id)
+            .Where(w => w.Id == id)
             .ExecuteDeleteAsync();
     } 
 
