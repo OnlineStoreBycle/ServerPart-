@@ -21,10 +21,10 @@ public sealed class ClientRepository : IRepository<Client>
         await _context.SaveChangesAsync();
     }
 
-    public async Task DeleteAsync(Client model)
+    public async Task DeleteAsync(int id)
     {
         await _context.Clients
-            .Where(w => w.Id == model.Id)
+            .Where(w => w.Id == id)
             .ExecuteDeleteAsync();
     }
 

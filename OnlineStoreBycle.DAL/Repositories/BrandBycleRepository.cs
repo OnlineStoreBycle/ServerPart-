@@ -21,10 +21,10 @@ public sealed class BrandBycleRepository : IRepository<BrandBycle>
         await _context.SaveChangesAsync();
     }
 
-    public async Task DeleteAsync(BrandBycle model)
+    public async Task DeleteAsync(int id)
     {
         await _context.BrandBycles
-            .Where(x => x.Id == model.Id)
+            .Where(x => x.Id == id)
             .ExecuteDeleteAsync();
     }
 

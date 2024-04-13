@@ -6,19 +6,19 @@ namespace OnlineStoreBycle.Controllers;
 
 [ApiController]
 [Route("api/[controller]/[action]")]
-public sealed class BycleTypeController : Controller
+public sealed class BycleController : Controller
 {
-    private readonly IService<BycleType> _service;
+    private readonly IService<Bycle> _service;
 
-    public BycleTypeController(IService<BycleType> service)
+    public BycleController(IService<Bycle> service)
     {
         _service = service;
     }
 
     [HttpPost]
-    public async Task AddAsync([FromBody] BycleType bycleType)
+    public async Task AddAsync([FromBody] Bycle bycle)
     {
-        await _service.AddAsync(bycleType);
+        await _service.AddAsync(bycle);
     }
 
     [HttpDelete("{id}")]
@@ -28,20 +28,20 @@ public sealed class BycleTypeController : Controller
     }
 
     [HttpGet]
-    public async Task<IEnumerable<BycleType>> GetAsync()
+    public async Task<IEnumerable<Bycle>> GetAsync()
     {
         return await _service.GetAsync();
     }
 
     [HttpGet("{id}")]
-    public async Task<BycleType?> GetAsync(int id)
+    public async Task<Bycle?> GetAsync(int id)
     {
         return await _service.GetAsync(id);
     }
 
     [HttpPut]
-    public async Task UpdateAsync([FromBody] BycleType bycleType)
+    public async Task UpdateAsync([FromBody] Bycle bycle)
     {
-        await _service.UpdateAsync(bycleType);
+        await _service.UpdateAsync(bycle);
     }
 }

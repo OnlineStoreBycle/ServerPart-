@@ -18,9 +18,9 @@ public sealed class BrandBycleService : IService<BrandBycle>
         await _repository.AddAsync(model);
     }
 
-    public async Task DeleteAsync(BrandBycle model)
+    public async Task DeleteAsync(int id)
     {
-        await _repository.DeleteAsync(model);
+        await _repository.DeleteAsync(id);
     }
 
     public async Task<IEnumerable<BrandBycle>> GetAsync()
