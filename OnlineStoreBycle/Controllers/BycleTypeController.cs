@@ -6,7 +6,7 @@ namespace OnlineStoreBycle.Controllers;
 
 [ApiController]
 [Route("api/[controller]/[action]")]
-public sealed class BycleTypeController : Controller
+public sealed class BycleTypeController : ControllerBase
 {
     private readonly IService<BycleType> _service;
 
