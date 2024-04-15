@@ -1,0 +1,35 @@
+﻿version: '3.4'
+
+services:
+  api:
+    container_name: api
+    image: api:latest
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings:OnlineStoreBycleDbContext=Host=postgres;Port=5432;Database=bycledb;Username=user;Password=password; 
+    ports:
+      - "40000:8080"
+      - "40001:8081"
+    build:
+      context: .
+      dockerfile: dockerfile
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro
+
+
+  postgres:
+    container_name: postgres
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: bycledb
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./OnlineStoreBycle.DAL/Scripts:/docker-entrypoint-initdb.d
+    ports:
+      - "5432:5432"
+
+volumes:
+  postgres_data:
